@@ -21,7 +21,11 @@ func handler() http.HandlerFunc {
 	app.Use(recover.New())
 	app.Use(compress.New())
 	app.Use(requestid.New())
+
+	// EDL Routes
 	app.Get("/weave", handlers.EDLFromDNSHandler("allow.us1.weavephone.net"))
+	app.Get("/threatlocker/url", handlers.EDLFromStaticHandler("threatlocker_url"))
+
 	return adaptor.FiberApp(app)
 }
 
