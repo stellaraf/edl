@@ -25,6 +25,8 @@ func handler() http.HandlerFunc {
 	// EDL Routes
 	app.Get("/weave", handlers.EDLFromDNSHandler("allow.us1.weavephone.net"))
 	app.Get("/threatlocker/url", handlers.EDLFromStaticHandler("threatlocker_url"))
+	app.Get("fedexsm/ip", handlers.EDLFromDNSHandler("cafegip.ts.dmz.fedex.com"))
+	app.Get("fedexsm/url", handlers.EDLFromStaticHandler("fedexsm_url"))
 
 	return adaptor.FiberApp(app)
 }

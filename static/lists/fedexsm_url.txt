@@ -1,0 +1,9 @@
+cafegip.ts.dmz.fedex.com
+dmz.fedex.com
+gateway.fedex.com
+ws.fedex.com
+*.*.dmz.fedex.com
+*.dmz.fedex.com
+*.g.fedex.com
+*.gateway.fedex.com
+*.ws.fedex.com
