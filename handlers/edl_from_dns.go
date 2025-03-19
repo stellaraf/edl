@@ -12,7 +12,9 @@ const cache_header_value string = "s-maxage=3600, stale-while-revalidate=14400"
 func createList(response *doh.DOHResponse) string {
 	list := []string{}
 	for _, answer := range response.Answer {
-		list = append(list, answer.Data)
+		if answer.Type == 1 || answer.Type == 28 {
+			list = append(list, answer.Data)
+		}
 	}
 	return strings.Join(list, "\n")
 }
