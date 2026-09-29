@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
     tests:
         name: test
-        runs-on: codebuild-stellaraf-actions-public-${{ github.run_id }}-${{ github.run_attempt }}
+        runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-go@v5
